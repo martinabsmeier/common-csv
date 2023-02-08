@@ -44,7 +44,7 @@
         </sonar.coverage.jacoco.xmlReportPaths>
 
         <!-- dependency versions -->
-        <lombok.version>1.18.24</lombok.version>
+        <lombok.version>1.18.26</lombok.version>
         <antlr.version>4.11.1</antlr.version>
 
         <!-- test dependency versions -->
