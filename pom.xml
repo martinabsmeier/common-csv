@@ -14,7 +14,7 @@
     <developers>
         <developer>
             <name>Martin Absmeier</name>
-            <email>martinabsmeier@gmx.de</email>
+            <email>martin.absmeier@gmx.de</email>
         </developer>
     </developers>
 
@@ -45,12 +45,14 @@
 
         <!-- dependency versions -->
         <lombok.version>1.18.24</lombok.version>
+        <antlr.version>4.11.1</antlr.version>
 
         <!-- test dependency versions -->
         <junit.version>5.9.2</junit.version>
         <mockito.version>5.1.1</mockito.version>
 
         <!-- plugin versions -->
+        <antlr.plugin.version>4.11.1</antlr.plugin.version>
         <compiler.plugin.version>3.10.1</compiler.plugin.version>
         <surefire.plugin.version>3.0.0-M8</surefire.plugin.version>
         <jar.plugin.version>3.3.0</jar.plugin.version>
@@ -67,6 +69,12 @@
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
             <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.antlr</groupId>
+            <artifactId>antlr4-runtime</artifactId>
+            <version>${antlr.version}</version>
         </dependency>
 
         <!-- test dependencies -->
@@ -86,6 +94,23 @@
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.antlr</groupId>
+                <artifactId>antlr4-maven-plugin</artifactId>
+                <version>${antlr.plugin.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>antlr4</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <listener>true</listener>
+                    <visitor>true</visitor>
+                </configuration>
+            </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
