@@ -234,4 +234,12 @@
             </resource>
         </resources>
     </build>
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub Martin Absmeier Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/martinabsmeier/common-csv</url>
+        </repository>
+    </distributionManagement>
 </project>
